@@ -1,0 +1,39 @@
+
+// $sprites-map: sprite-map("sprites/*.png",
+//     $sprites-magnifier-spacing: 20px,
+//     $sprites-pin-spacing: 20px
+// );
+
+// $sprites-map-retina: sprite-map("retina-sprites/*.png",
+//     $retina-sprites-magifier-spacing: 100px,
+//     $retina-sprites-pin-spacing: 100px
+// );
+
+
+
+// sprite mixin that support retina display when available
+// $x and $y gets passed into the compass sprite helper function
+
+@mixin use-sprite($sprite, $x: 0, $y: 0) {
+
+    background:sprite($sprites-map, $sprite, $x, $y) no-repeat;
+
+
+    @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 2) {
+        background-image: sprite-url($sprites-map-retina);
+        background-size: (image-width(sprite-path($sprites-map-retina)) / 2) (image-height(sprite-path($sprites-map-retina)) / 2);
+
+        $x2Value: 0;
+
+        @if $x == 100% {
+            $x2Value: $x;
+        } @else {
+            $x2Value: (round(nth(sprite-position($sprites-map-retina, $sprite), 1) / 2) + $x);
+            
+        }
+
+        background-position: $x2Value (round(nth(sprite-position($sprites-map-retina, $sprite), 2) / 2) + $y);
+
+    }
+    
+}

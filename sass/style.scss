@@ -1,0 +1,100 @@
+
+@import "vars";
+
+@import "compass";
+@import "compass-inuit/defaults";
+@import "compass-inuit/generic/mixins";
+@import "compass-inuit/generic/normalize";
+@import "compass-inuit/generic/reset";
+@import "compass-inuit/generic/shared";
+@import "compass-inuit/base/main";
+
+// @import "breakpoint";
+// @import "singularitygs";
+
+
+@import "mixins";
+@import "typography";
+// @import "sprite";
+// @import "grid";
+
+
+//LIBs
+
+
+
+// Actual styles starts here
+
+// base styles like *, html, body 
+@import "base";
+
+
+// COMMON
+@import "common/common";
+
+
+
+
+// MODULES
+
+
+@mixin headerStyle {
+    background: #B8C1C8;
+    border-bottom: 1px solid #989EA4;
+    border-top: 1px solid #717D85;
+    color: #FFF;
+    font: bold 18px/21px Helvetica, Arial, sans-serif;
+    height: 24px;
+    margin: 0;
+    padding: 2px 0 0 12px;
+    text-shadow: 0 1px #646A6E;
+    width: 100%;
+    -moz-text-shadow: 0 1px #646A6E;
+    -webkit-text-shadow: 0 1px #646A6E;
+}
+
+dl {
+    margin: 0;
+    min-height: 1px;
+    overflow: hidden;
+    padding: 24px 0 0 0;
+    position: relative;
+}
+dt {
+    @include headerStyle;
+    bottom: auto;
+    min-height: 1px;
+    top: 0;
+    position: absolute;
+}
+.fakeHeader {
+    @include headerStyle;
+    display: none;
+    position: fixed;
+    z-index: 1000;
+
+    &.show {
+        display: block;
+    }
+}
+
+
+dl.animated dt {
+    bottom: 0;
+    top: auto;
+}
+dd {
+    font: bold 20px/45px Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0 0 0 12px;
+    white-space: nowrap;
+}
+dd + dd {
+    border-top: 1px solid #CCC;
+}
+
+
+
+
+
+

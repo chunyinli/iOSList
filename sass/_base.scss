@@ -1,0 +1,24 @@
+
+* {
+  @include box-sizing('border-box');
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background: $greenLight;
+    color: $darkGray;
+    font-size: 16px;
+    font-family: $baseFontFamily;
+    // height: 100%;
+}
+
+a {
+    color: $textLinkColor;
+    text-decoration: none;
+}
+
+
+

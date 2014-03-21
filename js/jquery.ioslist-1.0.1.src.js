@@ -51,7 +51,7 @@
             });
 
             function testPosition() {
-
+            	// when scrolling in container area
                 if(currentTop >= containerTop && currentTop < containerBottom) {
 	                var currentTop = $(window).scrollTop();
 	                var topElement;
@@ -116,7 +116,7 @@
                 _methods.init.call(this, arg);
             });
         } else {
-            $.error("Method " + method + " does not exist on jquery.ioslist");
+            $.error("Method " + arg + " does not exist on jquery.ioslist");
         }
     };
 })(jQuery);
